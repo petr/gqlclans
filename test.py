@@ -4,7 +4,6 @@ import json
 from schema import schema
 from app import app
 
-
 def test_ping():
     query = '{ ping }'
     result = schema.execute(query)
