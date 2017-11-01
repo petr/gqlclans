@@ -1,3 +1,6 @@
+aiohttp
+aiohttp-graphql
 graphene
 requests
 pytest
+pytest-aiohttp
