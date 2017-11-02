@@ -2,7 +2,7 @@
 from aiohttp import web
 from aiohttp_graphql import GraphQLView
 
-from schema import schema
+from gqlclans.schema import schema
 
 
 app = web.Application()
