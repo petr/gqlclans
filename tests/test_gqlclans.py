@@ -1,9 +1,8 @@
 
 import json
 
-from schema import schema
-from app import app
-
+from gqlclans.schema import schema
+from gqlclans.app import app
 
 def test_ping():
     query = '{ ping }'

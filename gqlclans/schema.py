@@ -1,7 +1,7 @@
 
 import graphene
 
-from logic import get_clan_info, search_clan
+from gqlclans.logic import get_clan_info, search_clan
 
 
 class Member(graphene.ObjectType):
