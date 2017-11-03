@@ -1,0 +1,25 @@
+{
+  "presets": [
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "transform-runtime",
+    [
+      "react-intl",
+      {
+        "messagesDir": "./i18n/src",
+        "enforceDescriptions": false
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "dynamic-import-node"
+      ]
+    }
+  },
+  "comments": false
+}
