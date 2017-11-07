@@ -1,16 +1,19 @@
 
 import json
 
+from graphene.test import Client
 from gqlclans.schema import schema
 from gqlclans.app import app
 
-def test_ping():
-    query = '{ ping }'
-    result = schema.execute(query)
 
-    assert hasattr(result, 'data'), 'No attribute data in result'
-    assert 'ping' in result.data, 'No ping key in result.data'
-    assert result.data['ping'] == 'Ping success!'
+def test_ping():
+    client = Client(schema)
+    result = client.execute('{ ping }')
+    assert result == {
+        'data': {
+            'ping': 'Ping success!'
+        }
+    }
 
 
 QUERY = '''
@@ -26,11 +29,43 @@ query getUser($id: ID) {
 
 def test_clan():
     query = '{ clans(clanId: "10164") { tag name }}'
-    result = schema.execute(query)
+    client = Client(schema)
+    result = client.execute(query)
+    assert result == {
+        'data': {
+            'clans': [
+                {
+                    'tag': 'BOUHA',
+                    'name': 'Второй  всадник  апокалипсиса',
+                }
+            ]
+        }
+    }
 
-    assert hasattr(result, 'data'), 'No attribute data in result'
-    assert 'clans' in result.data, 'No clan key in result.data'
-    assert dict(result.data['clans'][0]) == {'tag': 'BOUHA', 'name': 'Второй  всадник  апокалипсиса'}
+
+def test_mutation():
+    query = '''
+        mutation TestTitle {
+            addMessage(body: "Some text", clanId: "28"){
+                message {
+                    body
+                }
+                success
+            }
+        }
+    '''
+    client = Client(schema)
+    result = client.execute(query)
+    assert result == {
+        'data': {
+            'addMessage': {
+                'message': {
+                    'body': 'Some text',
+                },
+                'success': True
+            }
+        }
+    }
 
 
 async def test_app(test_client):

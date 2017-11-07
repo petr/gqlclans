@@ -9,6 +9,23 @@ class Member(graphene.ObjectType):
     account_id = graphene.ID()
     role = graphene.String()
 
+class Message(graphene.ObjectType):
+    body = graphene.String()
+
+
+class AddMessage(graphene.Mutation):
+    class Arguments:
+        body = graphene.String()
+        clan_id = graphene.ID()
+
+    success = graphene.Boolean()
+    message = graphene.Field(lambda: Message)# lambda is nice pattern for describe relation with not loaded yet classes
+
+    def mutate(self, info, body, clan_id):
+        message = Message(body=body)
+        success = True
+        return AddMessage(message=message, success=success)
+
 
 class Clan(graphene.ObjectType):
     name = graphene.String()
@@ -16,7 +33,11 @@ class Clan(graphene.ObjectType):
     clan_id = graphene.ID()
     color = graphene.String()
     members = graphene.List(Member)
+    messages = graphene.List(Message)
 
+
+class Mutation(graphene.ObjectType):
+    add_message = AddMessage.Field()
 
 
 class Query(graphene.ObjectType):
@@ -66,9 +87,10 @@ def parse_data(data):
                 tag=content['tag'],
                 clan_id=content['clan_id'],
                 color=content['color'],
-                members=map(get_member, content['members'])
+                members=map(get_member, content['members']),
+                messages=[],
             ))
     return clans
 
 
-schema = graphene.Schema(query=Query)
+schema = graphene.Schema(query=Query, mutation=Mutation)
