@@ -1,25 +1,39 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Clan from 'components/Clan'
+import { compose, graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
-export const mapStateToProps = (state, ownProps) => ({})
+import ClansList from 'components/ClansList'
 
-export const mapDispatchToProps = (dispatch) => ({})
-
-class ClansList extends React.Component {
-    static propTypes = {
-        ids: React.PropTypes.arrayOf(React.PropTypes.string),
+const mapStateToProps = (state, ownProps) => ({})
+const mapDispatchToProps = (dispatch) => ({})
+const query = gql`
+    query ClansList($ids: String) {
+        clans(clanId: $ids) {
+            clanId
+            name
+            tag
+            color
+            members {
+              name
+              accountId
+              role
+            }
+            messages {
+              body
+            }
+        }
     }
-
-    render() {
-        return (
-            <div>
-                {this.props.ids.map(id => (
-                    <Clan id={id} key={id} />
-                ))}
-            </div>
-        )
-    }
+`
+const options = {
+    options: (props) => ({
+         variables: {
+          ids: props.ids.join(','),
+        }
+    })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ClansList)
+export default compose(
+    graphql(query, options),
+    connect(mapStateToProps, mapDispatchToProps),
+)(ClansList)
