@@ -1,2 +1,1 @@
-
-echo 'Sorry,but nothing yet :('
+python start_app.py

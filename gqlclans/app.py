@@ -14,6 +14,3 @@ app.router.add_route('*', '/graphiql', graphiql_view)
 graphql_view = GraphQLView(schema=schema, batch=True)
 app.router.add_route('*', '/graphql', graphql_view)
 
-
-if __name__ == '__main__':
-    web.run_app(app, port=8567)
