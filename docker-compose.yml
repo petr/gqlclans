@@ -1,7 +1,7 @@
 version: '2'
 services:
   backend:
-    build: ./
+    image: sudoaptget/gqlclans:latest
     ports:
       - '8567:8567'
   frontend:
