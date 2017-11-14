@@ -1,13 +1,11 @@
 version: '2'
 services:
   backend:
-    image: sudoaptget/gqlclans:latest
-    ports:
+    build: ./
       - '8567:8567'
   frontend:
     build: ./frontend
     ports:
       - '8010:8010'
-  tests:
-    build: ./
-    command: tox
+    depends_on:
+      - backend
