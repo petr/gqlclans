@@ -8,4 +8,4 @@ services:
     ports:
       - '8010:8010'
     depends_on:
-      - gqlclansg
+      - gqlclans
