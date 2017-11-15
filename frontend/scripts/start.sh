@@ -1,0 +1,1 @@
+npm start -- --env.graphQLHost gqlclans
