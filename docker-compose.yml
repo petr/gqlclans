@@ -1,6 +1,6 @@
 version: '2'
 services:
-  backend:
+  gqlclans:
     build: ./
       - '8567:8567'
   frontend:
@@ -8,4 +8,4 @@ services:
     ports:
       - '8010:8010'
     depends_on:
-      - backend
+      - gqlclansg

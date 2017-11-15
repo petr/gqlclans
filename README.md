@@ -36,7 +36,7 @@ To run backend container from docker:
 To run frontend container from docker:
 
     ```
-    docker create --name=gqlclans-fe -t -i -p 8010:8010 sudoaptget/gqlclans-fe:latest
+    docker create --name=gqlclans-fe -t -i -p 8010:8010 -l gqlclans:gqlclans sudoaptget/gqlclans-fe:latest
     docker start -i gqlclans-fe
     ```
 

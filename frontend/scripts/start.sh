@@ -1,1 +1,1 @@
-npm start -- --env.graphQLHost backend
+npm start -- --env.graphQLHost gqlclans
