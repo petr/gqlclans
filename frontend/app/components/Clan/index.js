@@ -66,7 +66,7 @@ export class Clan extends React.Component {
 }
 
 
-const mutatuon = gql`
+export const mutation = gql`
     mutation addMessage($body: String, $clanId: ID) {
         addMessage(body: $body, clanId: $clanId){
             message {
@@ -77,4 +77,4 @@ const mutatuon = gql`
     }
 `
 
-export default graphql(mutatuon)(Clan)
+export default graphql(mutation)(Clan)

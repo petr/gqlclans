@@ -1,5 +1,5 @@
 import React from 'react'
-import { Clan } from '../'
+import { Clan, mutation } from '../'
 
 import { shallow } from 'enzyme'
 
@@ -21,7 +21,7 @@ const setUp = (props) => {
             messages: [],
             __typename: 'Clan',
         },
-        mutate: jest.fn(() => Promise.resolve({ data: { addMessage: { status: 'success' } } })),
+        mutate: jest.fn(() => Promise.resolve()),
     }
 
     return {
@@ -31,11 +31,16 @@ const setUp = (props) => {
 }
 
 describe('Clan specification', () => {
+    it('render query shape', () => {
+        expect(mutation).toMatchSnapshot()
+    })
+
     it('render render clan data', () => {
         const { wrapper, props } = setUp()
-        expect(wrapper.find('TableRowColumn').at(0).prop('children').join('')).toEqual(`[${props.clan.tag}]-${props.clan.name}`)
-        expect(wrapper.find('TableRowColumn').at(1).prop('children')).toEqual(props.clan.members.length)
-        expect(wrapper.find('TableRowColumn').at(2).prop('children').props.style).toEqual({ backgroundColor: props.clan.color, width: 30, height: 30 })
+        const columns = wrapper.find('TableRowColumn')
+        expect(columns.at(0).prop('children').join('')).toEqual(`[${props.clan.tag}]-${props.clan.name}`)
+        expect(columns.at(1).prop('children')).toEqual(props.clan.members.length)
+        expect(columns.at(2).prop('children').props.style.backgroundColor).toEqual(props.clan.color)
     })
 
     it('mutate clan message', () => {
