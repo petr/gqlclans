@@ -1,13 +1,14 @@
 import React from 'react'
+import propTypes from 'prop-types'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 import { TableRow, TableRowColumn, RaisedButton, TextField, Snackbar } from 'material-ui'
 
-class Clan extends React.Component {
+export class Clan extends React.Component {
     static propTypes = {
-        clan: React.PropTypes.object,
-        mutate: React.PropTypes.func,
+        clan: propTypes.object,
+        mutate: propTypes.func,
     }
 
     state = {

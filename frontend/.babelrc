@@ -5,14 +5,7 @@
     "react"
   ],
   "plugins": [
-    "transform-runtime",
-    [
-      "react-intl",
-      {
-        "messagesDir": "./i18n/src",
-        "enforceDescriptions": false
-      }
-    ]
+    "transform-runtime"
   ],
   "env": {
     "test": {

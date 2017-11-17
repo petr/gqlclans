@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextField, Subheader, RaisedButton } from 'material-ui'
+import { TextField, RaisedButton } from 'material-ui'
 import ClansList from 'containers/ClansList'
 
 export default class  extends React.Component {
@@ -20,12 +20,12 @@ export default class  extends React.Component {
     render() {
         return (
             <div>
-                <ClansList ids={this.state.ids} />
                 <div className="bottom-bar">
                     <h3>Enter Clan ids, separated by comma</h3>
                     <TextField id="clan-ids-input" value={this.state.value} onChange={this.handleChange} />
                     <RaisedButton secondary onClick={this.handleClick} label="Search clans" />
                 </div>
+                <ClansList ids={this.state.ids} />
             </div>
         )
     }
