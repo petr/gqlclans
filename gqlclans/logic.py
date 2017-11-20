@@ -24,12 +24,3 @@ def search_clan(search_txt):
     papi_request = PapiRequestSession()
 
     return papi_request.session.get(SEARCH_CLAN.format(search_txt)).json()
-
-
-def prepare_clans(data):
-    clans = []
-    for content in data.values():
-        clans.append({
-
-        })
-

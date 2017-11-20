@@ -16,29 +16,25 @@ def test_ping():
     }
 
 
-QUERY = '''
-query getUser($id: ID) {
-        user(id: $id) {
-            id
-            firstName
-            lastName
+def test_clan():
+    query = '''{ 
+        clans(clanId: "10164") {
+            edges { node { tag name } }
         }
     }
-'''
-
-
-def test_clan():
-    query = '{ clans(clanId: "10164") { tag name }}'
+    '''
     client = Client(schema)
     result = client.execute(query)
     assert result == {
         'data': {
-            'clans': [
-                {
-                    'tag': 'BOUHA',
-                    'name': 'Второй  всадник  апокалипсиса',
-                }
-            ]
+            'clans': {
+                'edges': [{
+                    'node': {
+                        'tag': 'BOUHA',
+                        'name': 'Второй  всадник  апокалипсиса',
+                    }
+                }]
+            }
         }
     }
 
@@ -69,17 +65,23 @@ def test_mutation():
 
 
 async def test_app(test_client):
+    query = '{clans { edges { node { name tag } } } }'
     client = await test_client(app)
-    response = await client.get('/?query={clans{name tag}}')
+    response = await client.get('/?query={}'.format(query))
     assert response.history[0].status == 307
     assert response.status == 200
-    assert response.url.relative().human_repr() == '/graphiql?query={clans{name tag}}'
+    assert response.url.relative().human_repr() == '/graphiql?query={}'.format(query)
 
-    response = await client.get('/graphql?query={ clans(clanId: "10164") { tag name }}')
+    query = '{clans(clanId: "10164") { edges { node { name tag } } } }'
+    response = await client.get('/graphql?query={}'.format(query))
     assert response.status == 200
     content = await response.content.read()
     assert json.loads(content) == {
         'data': {
-            'clans': [{'tag': 'BOUHA', 'name': 'Второй  всадник  апокалипсиса'}]
+            'clans': {
+                'edges': [{
+                    'node': {'tag': 'BOUHA', 'name': 'Второй  всадник  апокалипсиса'},
+                }]
+            }
         }
     }
