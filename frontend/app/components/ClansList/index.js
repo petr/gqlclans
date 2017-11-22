@@ -1,13 +1,14 @@
 import React from 'react'
+import propTypes from 'prop-types'
 import { Table, TableRow, TableBody, CircularProgress, TableHeader, TableHeaderColumn } from 'material-ui'
 
 import Clan from 'components/Clan'
 
 export default class ClansList extends React.Component {
     static propTypes = {
-        ids: React.PropTypes.arrayOf(React.PropTypes.string),
-        data: React.PropTypes.shape({
-            clans: React.PropTypes.array,
+        ids: propTypes.arrayOf(propTypes.string),
+        data: propTypes.shape({
+            clans: propTypes.array,
         }),
     }
 
