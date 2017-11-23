@@ -5,18 +5,18 @@
 
 ## Resources
 
-- Rep: https://github.com/petr/gqlclans |
-- Mattermost: https://mm.wargaming.net/clans/channels/grahpql |
-- Image path in docker registry: sudoaptget/gqlclans |
-- Sandbox: https://gqlclans.sloppy.zone |
+- https://github.com/petr/gqlclans
+- https://mm.wargaming.net/clans/channels/grahpql
+- Image path in docker registry: sudoaptget/gqlclans
+- https://gqlclans.sloppy.zone
 
 ---
 
 ## Docs
 
-http://docs.graphene-python.org/en/latest |
-http://graphql.org/learn |
-https://www.apollographql.com/docs/react/ |
+- http://docs.graphene-python.org/en/latest
+- http://graphql.org/learn
+- https://www.apollographql.com/docs/react/
 
 ---
 
@@ -82,7 +82,7 @@ app.router.add_route('*', '/graphql', graphql_view)
 - creating pull request to master
 - tests in cloud.docker start |
 - new docker image in cloud.docker is created |
-- Webhook "New image appear!" is triggered sloppy.io webhook and updates https://gqlclans.sloppy.zone/graphiql |
+- Webhook "New image appear!" is triggered sloppy.io webhook and updates sloppy.io |
 
 ---
 
