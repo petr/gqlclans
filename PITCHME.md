@@ -80,8 +80,8 @@ app.router.add_route('*', '/graphql', graphql_view)
 
 - creating pull request to master
 - tests in cloud.docker start |
-- if all tests are ok  new docker image in cloud.docker is created |
-- if new images appers in cloud docker, it triggers sloppy.io webhook and updates https://gqlclans.sloppy.zone/graphiql |
+- new docker image in cloud.docker is created |
+- Webhook "New image appear!" is triggered sloppy.io webhook and updates https://gqlclans.sloppy.zone/graphiql |
 
 ---
 
