@@ -28,7 +28,7 @@ Based on https://developers.wargaming.net !
 
 ## Schema description
 
-![Paper schema](https://photos-2.dropbox.com/t/2/AAAdhky1jBy6Q79TueVcrwmbDqi8rdkXysvGTG3dyyZicg/12/7681788/jpeg/32x32/1/_/1/2/%D0%A4%D0%B0%D0%B9%D0%BB%2023.11.17%2C%2014%2011%2035.jpeg/EMS_2gUYzj8gBygH/eNW7KoYDuFWOmYtHx6pGb11J3jPJI0PhjW9JnwkXCP8?size=2048x1536&size_mode=3)
+![Paper schema](https://github.com/petr/gqlclans/blob/master/images/paper_schema.jpeg?raw=true)
 
 ---
 
