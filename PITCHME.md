@@ -34,8 +34,6 @@ Based on https://developers.wargaming.net !
 
 ## Schema in python
 
-https://github.com/petr/gqlclans/blob/master/gqlclans/schema.py
-
 ```
     class Member(graphene.ObjectType):
         name = graphene.String()
