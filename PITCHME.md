@@ -5,17 +5,18 @@
 
 ## Resources
 
-- https://github.com/petr/gqlclans |
-- https://mm.wargaming.net/clans/channels/grahpql |
+- Rep: https://github.com/petr/gqlclans |
+- Mattermost: https://mm.wargaming.net/clans/channels/grahpql |
 - Image path in docker registry: sudoaptget/gqlclans |
-- https://gqlclans.sloppy.zone |
+- Sandbox: https://gqlclans.sloppy.zone |
 
 ---
 
 ## Docs
-- http://docs.graphene-python.org/en/latest |
-- http://graphql.org/learn |
-- https://www.apollographql.com/docs/react/ |
+
+http://docs.graphene-python.org/en/latest |
+http://graphql.org/learn |
+https://www.apollographql.com/docs/react/ |
 
 ---
 
