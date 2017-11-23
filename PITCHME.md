@@ -8,17 +8,18 @@
 - https://github.com/petr/gqlclans
 - https://mm.wargaming.net/clans/channels/grahpql
 - Image path in docker registry: sudoaptget/gqlclans
-- https://gqlclans.sloppy.zone/graphiql?
+- https://gqlclans.sloppy.zone
 
 ---
 
 Docs
-- http://docs.graphene-python.org/en/latest/
-- http://graphql.org/learn/
+- http://docs.graphene-python.org/en/latest
+- http://graphql.org/learn
+- https://www.apollographql.com/docs/react/
 
 ---
 
-Based on https://developers.wargaming.net/ !
+Based on https://developers.wargaming.net !
 
 ---
 
@@ -48,7 +49,6 @@ https://github.com/petr/gqlclans/blob/master/gqlclans/schema.py
         color = graphene.String()
         members = graphene.List(Member)
         messages = graphene.List(Message)
-
 ```
 
 ---
@@ -56,7 +56,6 @@ https://github.com/petr/gqlclans/blob/master/gqlclans/schema.py
 # Schema and aioHttp
 
 ```
-
 from aiohttp import web
 from aiohttp_graphql import GraphQLView
 
@@ -88,4 +87,12 @@ app.router.add_route('*', '/graphql', graphql_view)
 
 https://github.com/petr/gqlclans
 
+---
 
+## Why use Apollo/Relay with GraphQL?
+
+- Editor tooling (GraphQL IntelliJ plugin)
+- Code generation for static typing |
+- TypeScript/Flow integration |
+- Server-side logging  |
+- Persisted queries |
