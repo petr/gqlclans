@@ -83,12 +83,6 @@ app.router.add_route('*', '/graphql', graphql_view)
 
 ---
 
-# JOIN US
-
-https://github.com/petr/gqlclans
-
----
-
 ## Why use Apollo/Relay with GraphQL?
 
 - Editor tooling (GraphQL IntelliJ plugin)
@@ -96,3 +90,9 @@ https://github.com/petr/gqlclans
 - TypeScript/Flow integration |
 - Server-side logging  |
 - Persisted queries |
+
+---
+
+# JOIN US
+
+https://github.com/petr/gqlclans
