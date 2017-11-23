@@ -3,33 +3,35 @@
 
 ---
 
-# Resources
+## Resources
 
-- https://github.com/petr/gqlclans
-- https://mm.wargaming.net/clans/channels/grahpql
-- Image path in docker registry: sudoaptget/gqlclans
-- https://gqlclans.sloppy.zone
+- https://github.com/petr/gqlclans |
+- https://mm.wargaming.net/clans/channels/grahpql |
+- Image path in docker registry: sudoaptget/gqlclans |
+- https://gqlclans.sloppy.zone |
+
+---
+
+## Docs
+- http://docs.graphene-python.org/en/latest |
+- http://graphql.org/learn |
+- https://www.apollographql.com/docs/react/ |
 
 ---
 
-Docs
-- http://docs.graphene-python.org/en/latest
-- http://graphql.org/learn
-- https://www.apollographql.com/docs/react/
-
----
+## NO NDA
 
 Based on https://developers.wargaming.net !
 
 ---
 
-# Schema description
+## Schema description
 
 ![Paper schema](https://photos-2.dropbox.com/t/2/AAAdhky1jBy6Q79TueVcrwmbDqi8rdkXysvGTG3dyyZicg/12/7681788/jpeg/32x32/1/_/1/2/%D0%A4%D0%B0%D0%B9%D0%BB%2023.11.17%2C%2014%2011%2035.jpeg/EMS_2gUYzj8gBygH/eNW7KoYDuFWOmYtHx6pGb11J3jPJI0PhjW9JnwkXCP8?size=2048x1536&size_mode=3)
 
 ---
 
-# Schema in python
+## Schema in python
 
 https://github.com/petr/gqlclans/blob/master/gqlclans/schema.py
 
@@ -53,7 +55,7 @@ https://github.com/petr/gqlclans/blob/master/gqlclans/schema.py
 
 ---
 
-# Schema and aioHttp
+## Schema and aioHttp
 
 ```
 from aiohttp import web
@@ -70,16 +72,16 @@ app.router.add_route('*', '/graphql', graphql_view)
 
 ---
 
-# Graphql Console
+## Graphql Console
 
 ---
 
-# CI
+## CI
 
 - creating pull request to master
-- tests in cloud.docker start
-- if all tests are ok  new docker image in cloud.docker is created
-- if new images appers in cloud docker, it triggers sloppy.io webhook and updates https://gqlclans.sloppy.zone/graphiql
+- tests in cloud.docker start |
+- if all tests are ok  new docker image in cloud.docker is created |
+- if new images appers in cloud docker, it triggers sloppy.io webhook and updates https://gqlclans.sloppy.zone/graphiql |
 
 ---
 
