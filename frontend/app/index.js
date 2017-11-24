@@ -9,9 +9,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import App from 'components/App'
 import client from 'client'
 import settings from 'settings'
-
-window.client = client
-
 import rootReducer from 'reducers'
 
 import 'stylesheets/styles.scss'

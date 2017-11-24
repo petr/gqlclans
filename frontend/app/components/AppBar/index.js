@@ -1,7 +1,6 @@
 import React from 'react'
 import { AppBar as AppBarMaterial, List, ListItem } from 'material-ui'
-
-import styles from './styles.scss'
+import './styles.scss'
 
 
 export default class AppBar extends React.Component {
