@@ -9,11 +9,10 @@ const mapStateToProps = (state) => ({
     limit: state.settings.serversInfoLimit,
 })
 
-export const query = gql`
+export const query = gql`    
     query serversInfo($limit: Int) {
         servers(limit: $limit) {
-            playersOnline
-            server
+            ...AppBar_ServerInfo
         }
     }
 `
